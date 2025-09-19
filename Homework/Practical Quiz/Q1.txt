@@ -1,0 +1,17 @@
+
+SELECT i.name, i.username
+FROM users_info i
+JOIN users_contact c ON i.username = c.username
+WHERE c.phone_number IN (
+    SELECT phone_number
+    FROM users_contact
+    GROUP BY phone_number
+    HAVING COUNT(*) > 1
+)
+ORDER BY i.username;
+
+-- شماره تلفن هایی که بیش از یکبار تکرار شده اند را پیدا کرده،
+-- دو جدول را جوین میزنیم،
+-- نام و یوزرنیم کاربرانی که آن شماره را دارند خروجی میدهیم
+
+

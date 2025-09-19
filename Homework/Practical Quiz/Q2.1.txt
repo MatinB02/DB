@@ -1,0 +1,14 @@
+
+SELECT DISTINCT ON (category) 
+    name, 
+    category
+FROM 
+    products
+ORDER BY 
+    category, 
+    price DESC;
+    
+-- با توجه به گروه مرتب کرده، سپس در هر گروه با توجه به قیمت از بالا به پایین مرتب کرده و با دستور
+-- distinct
+-- فقط بالاترین تاپل هر دسته را خروجی میدهیم
+    
